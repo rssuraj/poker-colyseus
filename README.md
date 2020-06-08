@@ -17,8 +17,12 @@ TypeScript, JavaScript, Node.js, Colyseus
 
 ```
 clone/fork the repository
-npm start in server/ folder
-npm start in client/ folder
+In server/ folder:
+    npm install
+    npm start
+In client/ folder:
+    npm install
+    npm start
 ```
 
 The logs will be displayed on the console for both client and Server with all information from the time players joined until the last when winners are decided based on each player's hand.
