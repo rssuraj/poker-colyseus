@@ -1,4 +1,29 @@
-## Structure
+# Poker Back-end server
+
+The back-end server for Poker in TypeScript and Node.js with Colyseus for client-server communication. The project has no client UI and was mainly done for the backend server. I may add the UI in the future.
+The Poker types supported are `Texas Holdem` and `Omaha` both of which can be passed from the client when a `startGame` event is fired by a client.
+
+## Client folder
+
+This folder has a `app.js` file with minimal code to join players in a room and send different events to the server as the course of game moves forward.
+
+## Tech-stack used
+
+```
+TypeScript, JavaScript, Node.js, Colyseus
+```
+
+## Getting started
+
+```
+clone/fork the repository
+npm start in server/ folder
+npm start in client/ folder
+```
+
+The logs will be displayed on the console for both client and Server with all information from the time players joined until the last when winners are decided based on each player's hand.
+
+## Structure of back-end server
 
 - `app.ts`: main entry point, register a game room handler and attach [`@colyseus/monitor`]
 - `GameRoom.ts`: A Game room handler for all the logic of handling Poker Game between configured number of players
@@ -8,9 +33,6 @@
 - `utils/CardUtils.ts`: A class which provides some utility methods to perform on the cards(Player/Community)
 - `package.json`: Node.js config file with all dependencies
 - `tsconfig.json`: TypeScript configuration file
-
-## Server Start
-npm start
 
 ## Configure Poker Type
 Has to be send as `options` parameter when creating a room on client and can have following values for now:
@@ -92,3 +114,7 @@ Example: this.broadcast(`nextPlayerMove`, this.state);
     1. The 4 player dealt cards and 5 community cards are used to determine the best hand.
     2. The best hand is calculated with following contrainsts:
         a. Exactly 2 player dealt cards has to be used in the best hand computed.
+        
+## Authors
+
+* **Suraj Singh** - *Initial work*
